@@ -1,0 +1,143 @@
+<html>
+
+<head>
+ <link rel="stylesheet" type="text/css" href="main.scss" >
+</head>
+
+<body>
+  <header>
+    <div class="header-wrapp">
+      <h1><%= link_to image_tag('sunrooflogo.jpg', :alt => 'SUNROOF（サンルーフ）', :size => '240x40') %></h1>
+    </div>
+  </header>
+
+  <div class="sub-category-list">
+    <ul>
+      <li><%= link_to '中古車を買う' %></li>
+    </ul>
+  </div>
+
+<div class="main-wrapper">
+  <div class="left-column">
+    <%= link_to "動画トップ", "/", class: "on" %>
+    <%= link_to "ニュース", "/category/自動車 ニュース" %>
+    <%= link_to "CM・PV", "/category/自動車 CM" %>
+    <%= link_to "試乗・解説", "/category/自動車 試乗" %>
+    <%= link_to "大会・イベント", "/category/自動車 イベント" %>
+    <%= link_to "テクノロジー", "/category/車 テクノロジー" %>
+    <%= link_to "エンタメ", "/category/自動車 エンタメ" %>
+  </div>
+  <div class="center-column">
+    <p class="title">「<%= @tag_word %>」のタグが付いた動画一覧</p>
+    <div class="pickup_columns">
+      <% @videos.each do |video| %>
+      <div class="pickup_column">
+        <a href="/<%=video[:id]%>">
+          <img class="img_column" src="<%= video[:thumbnail] %>" alt="画像" style="float:left;">
+          <p class="video_title"><%= video[:title] %></p>
+        </a>
+        <p class="description"><%= video[:description] %></p>
+        <p class="views" style="clear:both;">再生回数 <%= video[:views] %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="right-column">
+    <p class="view_title">再生数ランキング</p>
+    <p class="view_description">SUNROOF Movieで再生数が多い動画</p>
+    <div class="view_columns">
+      <% @videos_ranking.each do |video| %>
+      <div class="view_column">
+        <a href="/<%=video[:id]%>">
+          <img class="img_column" src="<%= video[:thumbnail] %>" alt="画像" style="float:left;">
+          <p class="video_title"><%= video[:title] %></p>
+        </a>
+        <p class="views" style="clear:both;">再生回数 <%= video[:views] %></p>
+      </div>
+      <% end %>
+    </div>
+    <p class="tag_title">人気タグ</p>
+    <p class="tag_description">SUNROOF Movieで人気のキーワード</p>
+    <div class="tag_columns">
+      <%= link_to "レクサス", "/tag/レクサス" %>
+      <%= link_to "アウディ", "/tag/アウディ" %>
+      <%= link_to "プリウス", "/tag/トヨタ プリウス" %>
+      <%= link_to "ブラマヨ漫才", "/tag/ブラマヨ" %>
+      <%= link_to "レクサス", "/tag/レクサス" %>
+      <%= link_to "アウディ", "/tag/アウディ" %>
+      <%= link_to "プリウス", "/tag/トヨタ プリウス" %>
+      <%= link_to "ブラマヨ漫才", "/tag/ブラマヨ" %>
+      <%= link_to "レクサス", "/tag/レクサス" %>
+      <%= link_to "アウディ", "/tag/アウディ" %>
+      <%= link_to "プリウス", "/tag/トヨタ プリウス" %>
+      <%= link_to "ブラマヨ漫才", "/tag/ブラマヨ" %>
+      <%= link_to "レクサス", "/tag/レクサス" %>
+      <%= link_to "アウディ", "/tag/アウディ" %>
+      <%= link_to "プリウス", "/tag/トヨタ プリウス" %>
+      <%= link_to "ブラマヨ漫才", "/tag/ブラマヨ" %>
+    </div>
+    <p class="new_title">新着動画</p>
+    <p class="new_description">SUNROOF Movieの新着動画</p>
+    <div class="new_columns">
+      <% @videos_new.each do |video| %>
+      <div class="new_column">
+        <a href="/<%=video[:id]%>">
+          <img class="img_column" src="<%= video[:thumbnail] %>" alt="画像" style="float:left;">
+          <p class="video_title"><%= video[:title] %></p>
+        </a>
+        <p class="views" style="clear:both;">再生回数 <%= video[:views] %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="link">
+  <a><%= "#{@tag_name}の中古車一覧" %></a>
+  <% if @second_tag_name %>
+    <a><%= "#{@second_tag_name}の中古車一覧" %></a>
+  <% end %>
+</div>
+
+<div class="ranking_link">
+  <h2><%= "#{@tag_name}の中古車ランキング" %></h2>
+  <ul>
+    <li>
+        <p>1位</p>
+        <img src="../assets/軽自動車.png" >
+        <a>軽自動車</a>
+    </li>
+    <li>
+        <p>2位</p>
+        <img src="../assets/SUV.png" >
+        <a>SUV・クロカン</a>
+    </li>
+    <li>
+        <p>3位</p>
+        <img src="../assets/ミニバン.png" >
+        <a>ミニバン・ワンボックス</a>
+    </li>
+    <li>
+        <p>4位</p>
+        <img src="../assets/セダン.png" >
+        <a>セダン</a>
+    </li>
+    <li>
+        <p>5位</p>
+        <img src="../assets/ハイブリッド.png" >
+        <a>ハイブリッド・EV車</a>
+    </li>
+    <div class="clear"></div>
+  </ul>
+</div>
+
+<div class="sunroof_link">
+  <a href="https://sun-roof.jp/">SUNROOFトップへ</a>
+  <a href="/">SUNROOF Movieトップへ</a>
+</div>
+
+</body>
+
+
+<html>

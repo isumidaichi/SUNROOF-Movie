@@ -1,0 +1,638 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background-size: 100%;
+  margin: 0px;
+}
+
+.index_body {
+  background: image-url("Movie_top.png") no-repeat;
+  background-size: 100%;
+  margin: 0px;
+}
+
+.header-wrapp {
+  width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #fff;
+}
+
+.category-list {
+    font-size: 0;
+    width: 100%;
+    margin: 0;
+    background: none;
+    ul {
+      width: 900px;
+      padding: 0;
+      display: table;
+      margin: 0 auto;
+    }
+    li {
+      display: table-cell;
+      font-size: 12px;
+      padding: 5px 10px;
+      width: 120px;
+      font-weight: bold;
+      text-align: center;
+      float: left;
+      border-right: 1px solid #fff;
+      a {
+        color: #fff;
+      }
+      &:hover {
+        color: #FF9F00;
+        background-color: #FFF;
+        a {
+          color: #FF9F00;
+        }
+      }
+    }
+  }
+
+  .sub-category-list {
+    font-size: 0;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 4%;
+    background: none;
+    background-color: #FF9F00;
+    ul {
+      width: 900px;
+      padding: 0;
+      display: table;
+      margin: 0 auto;
+    }
+    li {
+      display: table-cell;
+      font-size: 12px;
+      padding: 5px 10px;
+      width: 120px;
+      font-weight: bold;
+      text-align: center;
+      float: left;
+      border-right: 1px solid #fff;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      &:hover {
+        color: #FF9F00;
+        background-color: #FFF;
+        a {
+          color: #FF9F00;
+        }
+      }
+    }
+  }
+
+  .image_height {
+    height: 600px;
+  }
+
+  .main-wrapper {
+    .left-column {
+      margin-left: 12%;
+      width: 10%;
+      float: left;
+      margin-top: 15px;
+      a {
+        color: black;
+        font-size: 15px;
+        display: block;
+        text-decoration: none;
+        margin-bottom: 10px;
+        padding: 3px 0px 3px 15px;
+      }
+      .on {
+        color: orange;
+        font-weight: bold;
+        border: 1px solid orange;
+      }
+    }
+    .show_center-column {
+      width: 560px;
+      float: left;
+      margin-left: 5%;
+      margin-top: 15px;
+      .video {
+        .video_title {
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 0px;
+        }
+        .description {
+          margin-top: 25px;
+          font-size: 15px;
+        }
+        a {
+          padding: 3px 10px;
+          border: 1px solid #ccc;
+          font-size: 12px;
+          margin-top: 5px;
+          text-decoration: none;
+          color: black;
+          border-radius: 5%;
+          display: inline-block;
+        }
+        .views {
+          font-size: 13px;
+          text-align: right;
+        }
+      }
+    }
+    .center-column {
+      width: 40%;
+      float: left;
+      margin-left: 5%;
+      .title {
+        font-size: 15px;
+        font-weight: bold;
+        color: orange;
+        border-bottom: 2px solid orange;
+      }
+      .pickup_columns {
+        a {
+          text-decoration: none;
+          color: black;
+        }
+        .pickup_column {
+          border-bottom: 1px solid gray;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          .img_column {
+              width: 40%;
+              margin-right: 10px;
+          }
+          .video_title {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 0px;
+          }
+          .description {
+            margin-top: 5px;
+            font-size: 11px;
+          }
+          .views {
+            font-size: 13px;
+            text-align: right;
+          }
+        }
+      }
+    }
+    .right-column {
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      margin-left: 5%;
+      width: 20%;
+      float: left;
+      .view_title {
+        font-size: 15px;
+        font-weight: bold;
+        color: orange;
+        border-bottom: 2px solid orange;
+        margin-bottom: 5px;
+      }
+      .view_description {
+        color: orange;
+        padding-left: 7px;
+        font-size: 12px;
+      }
+      .view_columns {
+        margin-bottom: 30px;
+        .view_column {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid gray;
+          .img_column {
+            width: 80px;
+            margin-right: 5px;
+          }
+          .video_title {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 0px;
+          }
+          .views {
+            font-size: 11px;
+            text-align: right;
+          }
+          // .description_column {
+          //   font-size: 12px;
+          //   width: 50%;
+          //   display: inline-block;
+          // }
+        }
+      }
+      .tag_title {
+        font-size: 15px;
+        font-weight: bold;
+        color: orange;
+        border-bottom: 2px solid orange;
+        margin-bottom: 5px;
+      }
+      .tag_description {
+        color: orange;
+        padding-left: 7px;
+        font-size: 12px;
+      }
+      .tag_columns {
+        margin-bottom: 30px;
+        a {
+          display: inline-block;
+          padding: 3px 10px;
+          border: 1px solid #ccc;
+          text-decoration: none;
+          color: black;
+          margin-top: 5px;
+          border-radius: 5%;
+          font-size: 12px;
+        }
+      }
+      .new_title {
+        font-size: 15px;
+        font-weight: bold;
+        color: orange;
+        border-bottom: 2px solid orange;
+        margin-bottom: 5px;
+      }
+      .new_description {
+        color: orange;
+        padding-left: 7px;
+        font-size: 12px;
+      }
+      .new_columns {
+        .new_column {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          border-bottom: 1px solid gray;
+          .img_column {
+            width: 80px;
+            margin-right: 5px;
+          }
+          .video_title {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 0px;
+          }
+          .views {
+            font-size: 11px;
+            text-align: right;
+          }
+        }
+      }
+    }
+    .clear {
+      clear: left;
+    }
+  }
+
+  .search-maker {
+    border-bottom: 1px solid lightgray;
+    width: 1010px;
+    height: 500px;
+    margin: 100px auto 30px;
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .maker-column {
+      margin: 30px auto 0px;
+      -webkit-padding-start: 0;
+      li {
+        list-style: none;
+        width: 49.5%;
+        float: left;
+        p {
+          font-size: 14px;
+          font-weight: bold;
+
+        }
+      }
+      .maker-columns {
+        text-align: center;
+        border-right: 1px solid lightgray;
+        overflow: hidden;
+        a {
+          padding-top: 10px;
+          color: #666;
+          font-weight: bold;
+          text-decoration: none;
+          font-size: 14px;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        &:last-child {
+          border: none;
+        }
+        ul {
+          margin: 20px auto 0px;
+          padding: 0;
+          overflow: hidden;
+          li {
+            display: table-cell;
+            width: 25%;
+            height: 105px;
+            text-align: center;
+            line-height: 15px;
+            margin-bottom: 5px;
+            p {
+              display: block;
+              color: #666;
+              font-weight: bold;
+              font-size: 12px;
+              margin: 0 auto;
+              &:link, &:visited, &:hover, &:active {
+                text-decoration: none;
+              }
+            }
+            img {
+              margin-bottom: 5px;
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+      }
+    }
+
+
+    .to-maker-index {
+      color: #666;
+      font-weight: bold;
+    }
+  }
+
+.search-by-bodytype {
+    border-bottom: 1px solid lightgray;
+    width: 1010px;
+    height: 480px;
+    margin: 50px auto;
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    ul {
+      margin: 50px auto 0;
+      padding-left: 12%;
+      li {
+        display: table-cell;
+        width: 15%;
+        float: left;
+        height: 100px;
+        margin-left: 20px;
+        margin-bottom: 15px;
+        line-height: 15px;
+        color: #666;
+        // a {
+        //   display: block;
+        //   color: #666;
+        //   font-weight: bold;
+        //   font-size: 12px;
+        // }
+        img {
+          width: initial;
+          height: 90px;
+          margin: 0 auto;
+          display: block;
+        }
+        p {
+          text-align: center;
+          font-size: 12px;
+          margin: 0 auto;
+        }
+        .img-title-others {
+          padding-top: 60px;
+        }
+      }
+    }
+  }
+
+  .search-by-region {
+    border-bottom: 1px solid lightgray;
+    width: 1010px;
+    height: auto;
+    margin: 50px auto;
+    h2 {
+      text-align: center;
+      margin: 0 auto 40px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    table {
+      font-size: 13px;
+      margin: 20px auto;
+      padding-left: 5%;
+      th {
+        margin-right: 30px;
+        display: block;
+        a {
+          color: black;
+        }
+      }
+      td {
+        p {
+          font-weight: normal;
+          margin-right: 10px;
+        }
+        a {
+          color: black;
+        }
+      }
+
+    }
+  }
+
+  .ranking_link {
+    width: 900px;
+    margin: 0 auto;
+    li {
+      display: block;
+      width: 18%;
+      float: left;
+      margin-left: 10px;
+      p {
+
+      }
+      a {
+        display: block;
+        font-size: 14px;
+        text-align: center;
+      }
+      img{
+        display: block;
+        margin: 0 auto;
+        width: 60%;
+      }
+    }
+    .clear {
+      clear: left;
+    }
+  }
+
+  .link {
+    text-align: center;
+    margin: 100px 0;
+    a {
+    padding: 30px 70px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    }
+    :nth-child(2) {
+      border-left: 1px solid #ccc;
+    }
+  }
+
+  .sunroof_link {
+    width: 1010px;
+    margin: 100px auto;
+    a {
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      }
+      :nth-child(2) {
+        padding-top: 20px;
+      }
+    }
+
+  .sunroof-services {
+    width: 1010px;
+    height: 240px;
+    margin: 60px auto;
+    p {
+      text-align: center;
+    }
+    ul {
+      margin: 60px auto 0;
+      overflow: hidden;
+      padding-left: 100px;
+      li {
+        display: table-cell;
+        width: 22%;
+        float: left;
+        height: 120px;
+        img {
+          width: initial;
+          height: 100%;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+    }
+  }
+  //min-width: 1010px;
+
+
+  footer {
+    width: 100%;
+    background-color: black;
+    .footer-wrapp {
+    padding: 45px;
+    height: auto;
+    margin: 0 auto;
+    .footer_column {
+      padding-left: 100px;
+      overflow: hidden;
+      h3 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 25px;
+      color: #fff;
+      }
+      li {
+      list-style: none;
+      width: 33%;
+      float: left;
+      color: #fff;
+      }
+      .footer_columns {
+      ul {
+        padding: 0;
+        overflow: hidden;
+        li {
+        margin: 10px auto 0;
+        }
+        li:nth-child(odd) {
+        width: 40%;
+        float: left;
+        a {
+          color: #fff;
+          font-size: 13px;
+          text-decoration: none;
+        }
+        }
+        li:nth-child(even) {
+        width: 60%;
+        float: left;
+        a {
+          color: #fff;
+          font-size: 13px;
+          text-decoration: none;
+        }
+        }
+      }
+      }
+    }
+    }
+
+    .about-sunroof {
+      ul {
+      padding: 0;
+      overflow: hidden;
+      li {
+        width: 100%;
+        margin: 10px auto 0;
+      }
+      }
+    }
+    }
+
+
+  .footer-bottom {
+    margin: 40px auto 0;
+    .logo {
+    text-align: center;
+    }
+    .sns-group {
+    margin: 40px auto 0;
+    overflow: hidden;
+    padding-left: 30px;
+    width: 280px;
+    li {
+      display: table-cell;
+      width: 29%;
+      float: left;
+      height: 30px;
+
+      img {
+      width: initial;
+      height: 60%;
+      margin: 0 auto;
+      display: block;
+      }
+    }
+    }
+  }
+
+  .footer-text {
+    font-size: 12px;
+    margin: 40px 0 0;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    color: #fff;
+  }

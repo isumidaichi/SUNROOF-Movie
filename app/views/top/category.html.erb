@@ -1,0 +1,573 @@
+<html>
+
+<head>
+ <link rel="stylesheet" type="text/css" href="main.scss" >
+</head>
+
+<body>
+  <header>
+    <div class="header-wrapp">
+      <h1><%= link_to image_tag('sunrooflogo.jpg', :alt => 'SUNROOF（サンルーフ）', :size => '240x40') %></h1>
+    </div>
+  </header>
+
+  <div class="category-list">
+    <ul>
+      <li><%= link_to '中古車を買う' %></li>
+    </ul>
+  </div>
+
+<div class="main-wrapper">
+  <div class="left-column">
+    <%= link_to "動画トップ", "/", class: "on" %>
+    <%= link_to "ニュース", "/category/自動車 ニュース" %>
+    <%= link_to "CM・PV", "/category/自動車 CM" %>
+    <%= link_to "試乗・解説", "/category/自動車 試乗" %>
+    <%= link_to "大会・イベント", "/category/自動車 イベント" %>
+    <%= link_to "テクノロジー", "/category/車 テクノロジー" %>
+    <%= link_to "エンタメ", "/category/自動車 エンタメ" %>
+  </div>
+  <div class="center-column">
+    <p class="title">「<%= @category_name %>」のピックアップ動画</p>
+    <div class="pickup_columns">
+      <% @videos.each do |video| %>
+      <div class="pickup_column">
+        <a href="/<%=video[:id]%>">
+          <img class="img_column" src="<%= video[:thumbnail] %>" alt="画像" style="float:left;">
+          <p class="video_title"><%= video[:title] %></p>
+        </a>
+        <p class="description"><%= video[:description] %></p>
+        <p class="views" style="clear:both;">再生回数 <%= video[:views] %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="right-column">
+    <p class="view_title">再生数ランキング</p>
+    <p class="view_description">SUNROOF Movieで再生数が多い動画</p>
+    <div class="view_columns">
+      <% @videos_ranking.each do |video| %>
+      <div class="view_column">
+        <a href="/<%=video[:id]%>">
+          <img class="img_column" src="<%= video[:thumbnail] %>" alt="画像" style="float:left;">
+          <p class="video_title"><%= video[:title] %></p>
+        </a>
+        <p class="views" style="clear:both;">再生回数 <%= video[:views] %></p>
+      </div>
+      <% end %>
+    </div>
+    <p class="tag_title">人気タグ</p>
+    <p class="tag_description">SUNROOF Movieで人気のキーワード</p>
+    <div class="tag_columns">
+      <%= link_to "トヨタ", "/tag/トヨタ" %>
+      <%= link_to "日産", "/tag/日産" %>
+      <%= link_to "ホンダ", "/tag/ホンダ" %>
+      <%= link_to "スズキ", "/tag/スズキ" %>
+      <%= link_to "マツダ", "/tag/マツダ" %>
+      <%= link_to "レクサス", "/tag/レクサス" %>
+      <%= link_to "ダイハツ", "/tag/ダイハツ" %>
+      <%= link_to "スバル", "/tag/スバル" %>
+      <%= link_to "三菱", "/tag/三菱" %>
+      <%= link_to "メルセデス・ベンツ", "/tag/三菱" %>
+      <%= link_to "BMW", "/tag/三菱" %>
+      <%= link_to "アウディ", "/tag/三菱" %>
+      <%= link_to "フォルクスワーゲン", "/tag/三菱" %>
+      <%= link_to "MINI", "/tag/三菱" %>
+      <%= link_to "ポルシェ", "/tag/三菱" %>
+      <%= link_to "Jeep", "/tag/三菱" %>
+      <%= link_to "ボルボ", "/tag/三菱" %>
+      <%= link_to "ジムニー", "/tag/スズキ ジムニー " %>
+      <%= link_to "RX7", "/tag/マツダ RX7" %>
+      <%= link_to "アルファード", "/tag/トヨタ アルファード" %>
+      <%= link_to "プリウス", "/tag/トヨタ プリウス" %>
+      <%= link_to "セレナ", "/tag/日産 セレナ" %>
+      <%= link_to "フリード", "/tag/日産 セレナ" %>
+      <%= link_to "ハリアー", "/tag/日産 セレナ" %>
+      <%= link_to "エルグランド", "/tag/日産 セレナ" %>
+    </div>
+    <p class="new_title">新着動画</p>
+    <p class="new_description">SUNROOF Movieの新着動画</p>
+    <div class="new_columns">
+      <% @videos_new.each do |video| %>
+      <div class="new_column">
+        <a href="/<%=video[:id]%>">
+          <img class="img_column" src="<%= video[:thumbnail] %>" alt="画像" style="float:left;">
+          <p class="video_title"><%= video[:title] %></p>
+        </a>
+        <p class="views" style="clear:both;">再生回数 <%= video[:views] %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="search-maker">
+  <h2>メーカーから探す</h2>
+  <ul class="maker-column">
+    <li class="maker-columns">
+      <p>国産中古車</p>
+      <ul class="japanese-makers">
+          <li>
+              <img src=../assets/トヨタ.png>
+              <p>トヨタ</p>
+          </li>
+          <li>
+              <img src="../assets/日産.png" >
+              <p>日産</p>
+          </li>
+          <li>
+              <img src="../assets/ホンダ.png" >
+              <p>ホンダ</p>
+          </li>
+          <li>
+              <img src="../assets/マツダ.png" >
+              <p>マツダ</p>
+          </li>
+          <li>
+              <img src="../assets/スズキ.png" >
+              <p>スズキ</p>
+          </li>
+          <li>
+              <img src="../assets/レクサス.png" >
+              <p>レクサス</p>
+          </li>
+          <li>
+              <img src="../assets/スバル.png" >
+              <p>スバル</p>
+          </li>
+          <li>
+              <img src="../assets/三菱.png" >
+              <p>三菱</p>
+          </li>
+          <li>
+              <img src="../assets/ダイハツ.png" >
+              <p>ダイハツ</p>
+          </li>
+          <li>
+              <img src="../assets/ミツオカ.png" >
+              <p>ミツオカ</p>
+          </li>
+      </ul>
+      <%= link_to "国産メーカー一覧" %>
+    </li>
+    <li class="maker-columns">
+      <p>輸入中古車</p>
+      <ul class="foreign-makers">
+        <li>
+            <img src="../assets/BMW.png" >
+            <p>BMW</p>
+        </li>
+        <li>
+            <img src="../assets/ベンツ.png" >
+            <p>メルセデスベンツ</p>
+        </li>
+        <li>
+            <img src="../assets/アウディ.png" >
+            <p>アウディ</p>
+        </li>
+        <li>
+            <img src="../assets/フォルクスワーゲン.png" >
+            <p>フォルクスワーゲン</p>
+        </li>
+        <li>
+            <img src="../assets/ポルシェ.png" >
+            <p>ポルシェ</p>
+        </li>
+        <li>
+            <img src="../assets/シボレー.png" >
+            <p>シボレー</p>
+        </li>
+        <li>
+            <img src="../assets/ジープ.png" >
+            <p>ジープ</p>
+        </li>
+        <li>
+            <img src="../assets/MINI.png" >
+            <p>MINI</p>
+        </li>
+        <li>
+            <img src="../assets/ランドローバー.png" >
+            <p>ランドローバー</p>
+        </li>
+        <li>
+            <img src="../assets/フィアット.png" >
+            <p>フィアット</p>
+        </li>
+        <li>
+            <img src="../assets/プジョー.png" >
+            <p>プジョー</p>
+        </li>
+        <li>
+            <img src="../assets/ポルシェ.png" >
+            <p>ポルシェ</p>
+        </li>
+      </ul>
+      <%= link_to "輸入車メーカー一覧" %>
+    </li>
+  </ul>
+</div>
+
+
+<div class="search-by-bodytype">
+  <h2>ボディタイプから探す</h2>
+  <ul>
+    <li>
+        <img src="../assets/軽自動車.png" >
+        <p>軽自動車</p>
+    </li>
+    <li>
+        <img src="../assets/SUV.png" >
+        <p>SUV・クロカン</p>
+    </li>
+    <li>
+        <img src="../assets/ミニバン.png" >
+        <p>ミニバン・ワンボックス</p>
+    </li>
+    <li>
+        <img src="../assets/セダン.png" >
+        <p>セダン</p>
+    </li>
+    <li>
+        <img src="../assets/ハイブリッド.png" >
+        <p>ハイブリッド・EV車</p>
+    </li>
+    <li>
+        <img src="../assets/ステーションワゴン.png" >
+        <p>ステーションワゴン</p>
+    </li>
+    <li>
+        <img src="../assets/クーペ.png" >
+        <p>クーペ</p>
+    </li>
+    <li>
+        <img src="../assets/コンパクトカー.png" >
+        <p>コンパクトカー</p>
+    </li>
+    <li>
+        <img src="../assets/トラック.png" >
+        <p>トラック</p>
+    </li>
+    <li>
+        <img src="../assets/オープンカー.png" >
+        <p>オープンカー</p>
+    </li>
+    <li>
+        <img src="../assets/キャンピングカー.png" >
+        <p>キャンピングカー</p>
+    </li>
+    <li>
+        <img src="../assets/福祉車両.png" >
+        <p>福祉車両</p>
+    </li>
+  </ul>
+</div>
+
+<div class="search-by-region">
+  <h2>地域から探す</h2>
+  <table>
+      <tr>
+        <th>
+          <label>
+              <p>北海道</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>北海道</p>
+            </label>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>
+              <p>東北</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>青森県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>岩手県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>宮城県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>秋田県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>山形県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>福島県</p>
+            </label>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>
+              <p>関東</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>茨城県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>栃木県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>群馬県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>埼玉県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>千葉県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>東京都</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>神奈川県</p>
+            </label>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>
+              <p>北陸・甲信越</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>新潟県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>富山県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>石川県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>福井県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>山梨県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>長野県</p>
+            </label>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>
+              <p>東海</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>岐阜県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>静岡県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>愛知県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>三重県</p>
+            </label>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>
+              <p>関西</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>滋賀県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>京都府</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>大阪府</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>兵庫県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>奈良県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>和歌山県</p>
+            </label>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>
+              <p>中国</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>鳥取県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>島根県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>広島県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>山口県</p>
+            </label>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>
+              <p>四国</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>徳島県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>香川県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>愛媛県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>高知県</p>
+            </label>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <label>
+              <p>九州</p>
+          </label>
+        </th>
+        <td>
+            <label>
+                <p>福岡県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>佐賀県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>長崎県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>熊本県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>大分県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>宮崎県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>鹿児島県</p>
+            </label>
+        </td>
+        <td>
+            <label>
+                <p>沖縄県</p>
+            </label>
+        </td>
+      </tr>
+  </table>
+</div>
+
+<div class="sunroof_link">
+  <a href="https://sun-roof.jp/">SUNROOFトップへ</a>
+  <a href="/">SUNROOF Movieトップへ</a>
+</div>
+
+</body>
+
+
+<html>

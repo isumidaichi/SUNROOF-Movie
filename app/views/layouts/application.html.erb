@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SunroofMovie</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+  <footer>
+    <div class="footer-wrapp">
+      <ul class="footer_column">
+        <li class="footer_columns">
+          <h3>カテゴリ 一覧</h3>
+          <ul>
+            <li><%= link_to "中古車を買う"%></li>
+          </ul>
+        </li>
+        <li class="footer_columns">
+          <h3>人気メーカー 一覧</h3>
+          <ul>
+            <li><%= link_to "トヨタ"%></li>
+            <li><%= link_to "メルセデス・ベンツ"%></li>
+            <li><%= link_to "日産"%></li>
+            <li><%= link_to "BMW"%></li>
+            <li><%= link_to "ホンダ"%></li>
+            <li><%= link_to "アウディ"%></li>
+            <li><%= link_to "マツダ"%></li>
+            <li><%= link_to "フォルクスワーゲン"%></li>
+            <li><%= link_to "スズキ"%></li>
+            <li><%= link_to "MINI"%></li>
+            <li><%= link_to "レクサス"%></li>
+            <li><%= link_to "ポルシェ"%></li>
+            <li><%= link_to "スバル"%></li>
+            <li><%= link_to "Jeep"%></li>
+            <li><%= link_to "三菱"%></li>
+            <li><%= link_to "ボルボ"%></li>
+          </ul>
+        </li>
+        <li class="footer_columns">
+          <div class="about-sunroof">
+            <h3>SUNROOFについて</h3>
+            <ul>
+              <li><%= link_to "サイトマップ"%></li>
+              <li><%= link_to "SUNROOFトップ"%></li>
+              <li><%= link_to "カテゴリ一覧"%></li>
+              <li><%= link_to "メーカー一覧"%></li>
+              <li><%= link_to "運営会社", "http://telescope.co.jp/", target: "_blank" %></li>
+              <li><%= link_to "広告掲載に関するお問い合わせ", "http://telescope.co.jp/", target: "_blank" %></li>
+              <li><%= link_to "その他お問い合わせ", "http://telescope.co.jp/", target: "_blank" %></li>
+              <li><%= link_to "プライバシーポリシー"%></li>
+              <li><%= link_to "利用規約"%></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <div class="footer-bottom">
+        <div class="logo">
+          <%= link_to image_tag('sunrooflogo(w).png', :alt => 'SUNROOF', :size => '120x20') %>
+        </div>
+        <ul class="sns-group">
+          <li class="sns">
+            <%= link_to image_tag('Facebook.png'), "https://www.facebook.com/sunroof.telescope/" %>
+          </li>
+          <li class="sns">
+            <%= link_to image_tag('Twitter.png'), "https://twitter.com/sunroof_jp" %>
+          </li>
+          <li class="sns">
+            <%= link_to image_tag('Instagram.png'), "https://www.instagram.com/sunroof_jp/" %>
+          </li>
+        </ul>
+      </div>
+      <p class="footer-text">©Telescope Inc. All Rights Reserved</p>
+    </div>
+  </footer>
+</html>
